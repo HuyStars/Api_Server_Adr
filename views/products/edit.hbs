@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2>Sửa sản phẩm</h2>
+    <form action="/edit/{{item.id}}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="tenmay" class="form-label">Tên máy</label>
+            <input type="text" class="form-control" id="tenmay" placeholder="" name="ten_may" value="{{item.ten_may}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="hangsx">Hãng sản xuất</label>
+            <select class="form-select" aria-label="Default select example" name="hang_sx" required>
+                <option value="{{item.hang_sx}}" selected>{{item.hang_sx}}</option>
+                {{#each optionsEdit}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="anhsp" class="form-label">Ảnh sản phẩm</label>
+            <input type="file" class="form-control" id="anhsp" placeholder="" name="anh_sp">
+            <img src="../../{{item.anh_sp}}" alt="Không có" width="100">
+        </div>
+        <div class="mb-3">
+            <label for="giatien" class="form-label">Giá tiền</label>
+            <input type="number" class="form-control" id="giatien" placeholder="" name="gia_tien" value="{{item.gia_tien}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="binhluan" class="form-label">Bình luận</label>
+            <input type="text" class="form-control" id="binhluan" placeholder="" name="binh_luan" value="{{item.binh_luan}}" required>
+        </div>
+        <a href="/" type="submit" class="btn btn-outline-warning">Quay lại</a>
+        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+    </form>
+</div>

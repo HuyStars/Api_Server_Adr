@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2>Danh sách sản phẩm</h2>
+    <form action="search" method="get" role="search" class="d-flex">
+        <input type="search" name="search" placeholder="Search" aria-label="Search" class="form-control me-2">
+        <button class="btn btn-outline-success" type="submit" style="margin-left: 20px;">Search</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Ảnh sản phẩm</th>
+                <th scope="col">Tên máy</th>
+                <th scope="col">Hãng sản xuất</th>
+                <th scope="col">Giá tiền</th>
+                <th scope="col">Bình luận</th>
+                <th scope="col">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each item}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td><img src="{{this.anh_sp}}" alt="Không có" width="100"></td>
+                <td>{{this.ten_may}}</td>
+                <td>{{this.hang_sx}}</td>
+                <td>{{this.gia_tien}}</td>
+                <td>{{this.binh_luan}}</td>
+                <td>
+                    <a href="/edit/{{this.id}}" class="btn btn-primary btn-sm">Sửa</a>
+                    <a href="/delete/{{this.id}}" class="btn btn-danger btn-sm"
+                        onclick='return confirm("Bạn có chắc chắn muốn xóa mục này ?")'>Xóa</a>
+                    <a href="/detail/{{this.id}}" class="btn btn-outline-warning btn-sm">Chi tiết</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a href="./add" class="btn btn-success">Thêm sản phẩm</a>
+</div>

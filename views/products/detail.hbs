@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h2>Chi tiết sản phẩm</h2>
+    <form action="/chitiet/{{item.id}}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="tenmay" class="form-label">Tên máy</label>
+            <input type="text" class="form-control" id="tenmay" placeholder="" name="ten_may" value="{{item.ten_may}}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="hangsx">Hãng sản xuất</label>
+            <input type="text" class="form-control" id="hangsx" placeholder="" name="hang_sx" value="{{item.hang_sx}}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="anhsp" class="form-label">Ảnh sản phẩm</label>
+            <img src="../../{{item.anh_sp}}" alt="Không có" width="100">
+        </div>
+        <div class="mb-3">
+            <label for="giatien" class="form-label">Giá tiền</label>
+            <input type="number" class="form-control" id="giatien" placeholder="" name="gia_tien" value="{{item.gia_tien}}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="binhluan" class="form-label">Bình luận</label>
+            <input type="text" class="form-control" id="binhluan" placeholder="" name="binh_luan" value="{{item.binh_luan}}" readonly>
+        </div>
+        <a href="/" type="submit" class="btn btn-outline-warning">Quay lại</a>
+    </form>
+</div>
